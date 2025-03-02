@@ -1,0 +1,37 @@
+~/IdeaProjects/sarmad_back_end_task
+k6 run --out json=results.json k6-test.js
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+     execution: local
+        script: k6-test.js
+        output: json (results.json)
+
+     scenarios: (100.00%) 1 scenario, 10000 max VUs, 2m10s max duration (incl. graceful stop):
+              * default: Up to 10000 looping VUs for 1m40s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+     data_received..................: 255 MB  2.5 MB/s
+     data_sent......................: 230 MB  2.3 MB/s
+     http_req_blocked...............: avg=11.22µs  min=782ns    med=2.17µs   max=67.27ms  p(90)=3.4µs    p(95)=4.22µs
+     http_req_connecting............: avg=7.27µs   min=0s       med=0s       max=67.21ms  p(90)=0s       p(95)=0s
+     http_req_duration..............: avg=351.87ms min=237.14µs med=279.94ms max=1.3s     p(90)=793.31ms p(95)=892.78ms
+       { expected_response:true }...: avg=351.87ms min=237.14µs med=279.94ms max=1.3s     p(90)=793.31ms p(95)=892.78ms
+     http_req_failed................: 0.00%   0 out of 1128041
+     http_req_receiving.............: avg=46.56µs  min=7.04µs   med=21.54µs  max=76.99ms  p(90)=39.27µs  p(95)=105.49µs
+     http_req_sending...............: avg=15.69µs  min=3.34µs   med=7.85µs   max=127.69ms p(90)=11.67µs  p(95)=15.81µs
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=351.81ms min=221.45µs med=279.87ms max=1.3s     p(90)=793.2ms  p(95)=892.72ms
+     http_reqs......................: 1128041 11279.059021/s
+     iteration_duration.............: avg=352.01ms min=266.66µs med=280.03ms max=1.3s     p(90)=793.83ms p(95)=893.05ms
+     iterations.....................: 1128041 11279.059021/s
+     vus............................: 479     min=19           max=9935
+     vus_max........................: 10000   min=10000        max=10000
+
+
+running (1m40.0s), 00000/10000 VUs, 1128041 complete and 0 interrupted iterations
+default ✓ [======================================] 00000/10000 VUs  1m40s

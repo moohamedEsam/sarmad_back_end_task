@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: sarmad_back_end_task
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/sarmad
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+    disable-swagger-default-url: true
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-expansion: none
