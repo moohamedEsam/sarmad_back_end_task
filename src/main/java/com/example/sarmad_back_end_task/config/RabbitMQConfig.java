@@ -12,15 +12,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
     public static final String QUEUE_NAME = "orders.queue";
-    public static final String DEAD_QUEUE_NAME = "orders.dead.queue";
     public static final String EXCHANGE_NAME = "exchangeQueue";
     public static final String ROUTE_KEY = "somethingRandom";
 
     @Bean
     public Queue queue() {
         return QueueBuilder.durable(QUEUE_NAME)
-                .withArgument("x-dead-letter-exchange", "")
-                .withArgument("x-dead-letter-routing-key", DEAD_QUEUE_NAME)
                 .build();
     }
 
